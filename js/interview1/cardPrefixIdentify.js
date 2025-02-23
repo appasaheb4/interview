@@ -1,4 +1,3 @@
-const preDiscoverCard = ['6011', '622126', '622925', '644', '649', '65'];
 function nestedCardDetails(number) {
   if (
     number?.toString().split('')[0] + '' + number?.toString().split('')[1] ==
@@ -6,20 +5,14 @@ function nestedCardDetails(number) {
     number?.toString().split('')[0] + '' + number?.toString().split('')[1] ==
       '37'
   ) {
-    if (number.toString().length == 15) {
-      return 'American Express';
-    }
-    return 'Enter correct card details';
+    return 'American Express';
   } else if (
     number?.toString().split('')[0] + '' + number?.toString().split('')[1] ==
       '36' ||
     number?.toString().split('')[0] + '' + number?.toString().split('')[1] ==
       '38'
   ) {
-    if (number.toString().length == 14 || number.toString().length == 15) {
-      return 'Diners Club';
-    }
-    return 'Enter correct card details';
+    return 'Diners Club';
   }
   return 'Invalid card details';
 }
@@ -27,11 +20,10 @@ function nestedCardDetails(number) {
 function cardIdentify(number) {
   const length = number.toString().length;
   if (
-    length == 14 ||
-    length == 15 ||
-    (length == 16 && Number.isInteger(number))
+    (length == 14 || length == 15 || length == 16) &&
+    Number.isInteger(number)
   ) {
-    if (number?.toString()?.toString().split('')[0] == '4') {
+    if (number?.toString()?.split('')[0] == '4') {
       if (
         number?.toString().substring(0, 4) == '4026' ||
         number?.toString().substring(0, 4) == '4508' ||
@@ -44,13 +36,9 @@ function cardIdentify(number) {
       }
       return 'Visa';
     } else {
-      if (preDiscoverCard.some((item) => number.toString().startsWith(item))) {
-        return 'Discover Card';
-      }
       return nestedCardDetails(number?.toString());
     }
   }
   return 'Invalid card details';
 }
-
-console.log({details: cardIdentify(6221274689234561)});
+console.log({details: cardIdentify(4175004852345618)});

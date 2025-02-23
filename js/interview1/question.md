@@ -12,7 +12,7 @@ Card Identify
    Length: 14, 15
 
    3821274a8b23456 - InValid
-   34212744822345 - Valid
+   36212744822345 - Valid
 
 3. Visa
    Prefix: 4
@@ -33,4 +33,4 @@ Card Identify
    Length: 16
 
    6221278b2345618 - InValid
-   6221264852345618 - Valid
+   6011264852345618 - Valid
