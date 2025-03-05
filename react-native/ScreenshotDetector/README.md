@@ -45,3 +45,5 @@
 10. Develop a small application that implements infinite scrolling with pagination with any dummy api.
 
 ## Assignment repo link: https://github.com/appasaheb4/toggle-app
+
+## Video Link: https://youtu.be/y0iboSYSjss
