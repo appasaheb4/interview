@@ -18,6 +18,45 @@
 
 10. What are the best practices for managing state in a React Native application? Compare Redux, Context API, and third-party libraries like MobX or Recoil.
 
+## Coding Question
+
+```
+
+Write a function to find all subsequences of a given string. A subsequence is a sequence derived from another string by deleting some or no elements without changing the order of the remaining elements.
+
+Example:
+Input: "abc"
+Output: ["", "a", "b", "c", "ab", "ac", "bc", "abc"]
+
+
+// answer
+function subsequences(str) {
+  const result = [];
+
+  function helper(current, index) {
+    if (index === str.length) {
+      result.push(current);
+      return;
+    }
+
+    // Include the current character
+    helper(current + str[index], index + 1);
+
+    // Exclude the current character
+    helper(current, index + 1);
+  }
+
+  helper("", 0);
+  return result;
+}
+
+const input = "abc";
+const subsequences = subsequences(input);
+console.log(subsequences);
+```
+
 ## Assignment repo link: https://github.com/appasaheb4/calendar-kanban
 
-## Video Link: https://appho.st/d/1arBx2Sv
+## Android Build Link: https://appho.st/d/1arBx2Sv
+
+## Video Link: https://youtu.be/fF0VrqsIc3U
